@@ -31,8 +31,9 @@ function CountryDetail() {
       icon: res.data.weather[0].icon,
       wind: res.data.wind.speed,
       visibility: res.data.visibility,
+      description: res.data.weather[0].description,
     });
-    //console.log(res.data);
+    console.log(res.data);
   };
   
   fetchData();
@@ -77,13 +78,23 @@ function CountryDetail() {
     <div className={styles.weather}>
         <h2>Weather in {state.capital}/{name}</h2>
         <div className={styles.weather__info}>
+        <div className='--flex-between'>
           <div className={styles.weather__info__temp}>
-            <img src={`http://openweathermap.org/img/w/${weather.icon}.png`} alt="weather icon" />
-            <p>{weather.temp}°C</p>
+            <img src={`http://openweathermap.org/img/w/${weather.icon}.png`} style={{width:"90px", marginBottom: "0px"}} alt="weather icon" />
+            <span style={{margin:"0rem"}}><b>{weather.description}</b></span>
+            <p className='--mb'><b>Temp: {weather.temp}°C</b></p>
+
+        </div>
+          <div className={styles.weather__info__temp}>
+           <p><b>Pressure: {weather.pressure}</b></p>
+           <br />
+            <p><b>Wind Speed: {weather.wind}</b></p>
+
+        </div>
 
         </div>
         <Link to="/">
-        <button className='--btn --btn-primary --px2 --p2'>
+        <button className='--btn --btn-primary --px2 --p2 --my2'>
         <BiArrowBack />
         Back to Countries
 
