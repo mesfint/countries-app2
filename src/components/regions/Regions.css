@@ -1,0 +1,15 @@
+.buttons button{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 5px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}

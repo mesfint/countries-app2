@@ -1,0 +1,11 @@
+input {
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding: 8px 1rem;
+    border: 1px solid #777;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+    width: 20em;
+    transition: all 0.3s;
+}

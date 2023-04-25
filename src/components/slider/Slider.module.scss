@@ -1,0 +1,121 @@
+.slider {
+   
+    width: 80%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* background-color: #000; */
+    border-radius: 5px;
+    height: 40rem;
+    padding: 2rem;
+    margin-top: 13rem;
+    margin-bottom: -6rem;
+    
+    
+}
+.prev{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 100;
+     cursor: pointer;
+    padding: 2rem;
+    font-size: 2rem;
+    z-index: 100;
+    background: #fff;
+}
+.next{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 100;
+    cursor: pointer;
+    padding: 2rem;
+    font-size: 2rem;
+    z-index: 100;
+    background: #fff;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+  }
+  .img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+
+  }
+  .nextArrow{
+    color:#fff;
+  }
+
+  @media screen and (min-width: 600px) {
+    .slide img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .slide img {
+    height: 100%;
+  }
+  .content {
+    position: absolute;
+    text-align: center;
+    top: 23rem;
+    left: 50%;
+    opacity: 0;
+    width: 50%;
+    padding: 3rem;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    animation: slide-up 1s ease 0.5s;
+    animation-fill-mode: forwards;
+    /* visibility: hidden; */
+    h2 {
+      font-size: 4.5rem;
+    }
+  }
+  
+  @keyframes slide-up {
+    0% {
+      visibility: visible;
+      top: 23rem;
+    }
+    100% {
+      visibility: visible;
+      top: 17rem;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .content {
+      width: 80%;
+    }
+  }
+  
+  .content > * {
+    color: #fff;
+    margin-bottom: 1rem;
+    
+  }
+  hr {
+    height: 2px;
+    background: #fff;
+    width: 50%;
+  }
