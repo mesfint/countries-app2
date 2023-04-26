@@ -16,7 +16,7 @@ const activeLink = ({ isActive }) => (isActive ? styles.active : styles.default)
 
 
 const Header = () => {
-  const [showMenu, setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(true)
 
   const dispatch = useDispatch();
   const favoriteQuantity = useSelector(selectFavoriteQuantity);
@@ -56,7 +56,7 @@ const Header = () => {
               >
                 </div>
             
-                <ul className='--list-style-none ' >
+                <ul onClick={hideMenu}>
                
                     <li><NavLink to="/" className={activeLink}>Home</NavLink></li>
                     <li><NavLink to="/countries-list" className={activeLink}>Countries</NavLink></li>

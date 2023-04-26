@@ -43,6 +43,7 @@ ul {
     justify-content: space-between;
     align-items: center;
     width: 30rem;
+    list-style: none;
 }
 .default{
   color: #fff;
@@ -95,6 +96,8 @@ ul {
     z-index: 999;
     transform: translateX(-200%);
     transition: all 0.3s;
+
+    
     
     .nav-wrapper {
       position: absolute;
@@ -109,6 +112,24 @@ ul {
     .show-nav-wrapper {
       transform: translateX(100%);
     }
+      ul {
+        display: block;
+        .logo-mobile {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          > * {
+            cursor: pointer;
+          }
+        }
+        li {
+          padding: 5px 0;
+          border-bottom: 1px solid #333;
+          a {
+            display: block;
+          }
+        }
+      }
 
   }
 
