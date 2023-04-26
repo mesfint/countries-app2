@@ -45,17 +45,16 @@ const favoriteSlice = createSlice({
     },
     REMOVE_FROM_FAVORITE(state,action){
         const favoriteIndex = state.favorites.findIndex((f)=> f.name.common === action.payload.name.common);
+        console.log("favoriteIndex=>",favoriteIndex)
         state.favorites.splice(favoriteIndex,1);
-        toast.error(`${action.payload.name.common}  removed from Favorite!!!`)
         localStorage.setItem("favorite-countries",JSON.stringify(state.favorites));
+        toast.error(`${action.payload.name.common}  removed from Favorite!!!`)
     },
-    CLEAR_ALL_FAVORITE(state,action){
-       const favoriteIndex = state.favorites.findIndex((f)=> f.name.common === action.payload.name.common);
+    CLEAR_ALL_FAVORITE(state){
+      //The CLEAR_ALL_FAVORITE function should not be expecting any payload data since it is only responsible for clearing all the favorites.
         state.favorites = [];
         localStorage.setItem("favorite-countries",JSON.stringify(state.favorites));
-        state.favorites.splice(favoriteIndex,1);
         toast.error("Your Favorite cart is cleared")
-        localStorage.setItem("favorite-countries",JSON.stringify(state.favorites));
 
     },
 

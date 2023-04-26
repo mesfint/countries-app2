@@ -45,7 +45,7 @@ const Favorite = () => {
   return (
     <section>
       <div className={`container ${styles.table}`}>
-        <h2>Favorite Country</h2>
+        <h2>Favorite Country(s)</h2>
         {favCountries.length === 0 ? (
           <>
             <p>Your fav cart is empty</p>
